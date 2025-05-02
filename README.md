@@ -9,22 +9,16 @@ Este repositorio contiene el desarrollo del Sprint 1 del curso **Proyecto de An�
 
 ```
 proyecto_sprint01/
-├── Data/                  # Archivos de datos CSV provistos
-│   ├── train.csv
-│   ├── test.csv
-│   └── Diccionario.csv
+├── Data/                  
+│   └── Sales.xlsx         # Dataset principal cargado y analizado
 │
-├── Notebooks/            # Notebooks Jupyter desarrollados
-│   ├── EDA.ipynb         # Análisis exploratorio de datos
-│   └── Interfaz.ipynb    # Interfaz interactiva con ipywidgets y MongoDB
+├── Notebooks/            
+│   └── Sprint1_Grupo3_PAD.ipynb   # Notebook unificado con EDA e interfaz interactiva
 │
-├── Utils/                # Funciones auxiliares (limpieza, etc.)
-│   └── limpieza.py
-│
-├── Sprint01.pdf          # Enunciado del Sprint (para referencia)
-├── requirements.txt      # Lista de librerías necesarias
-├── .gitignore            # Archivos y carpetas a ignorar por Git
-└── README.md             # Este archivo
+├── Sprint01.pdf           # Enunciado del Sprint (para referencia)
+├── requirements.txt       # Lista de librerías necesarias
+├── .gitignore             # Archivos y carpetas a ignorar por Git
+└── README.md              # Este archivo
 ```
 
 ---
@@ -34,15 +28,15 @@ proyecto_sprint01/
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/proyecto_sprint01.git
+git clone https://github.com/milkreator/proyecto_sprint01.git
 cd proyecto_sprint01
 ```
 
-2. Crea un entorno virtual (opcional pero recomendado):
+2. Crea un entorno virtual:
 
 ```bash
-python -m venv env
-source env/bin/activate  # En Windows: env\Scripts\activate
+python3 -m venv venv_sprint01
+source venv_sprint01/bin/activate
 ```
 
 3. Instala las dependencias:
@@ -51,17 +45,15 @@ source env/bin/activate  # En Windows: env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Abre los notebooks:
+4. Abre el notebook principal:
 
 ```bash
-jupyter notebook
+jupyter notebook Notebooks/Sprint1_Grupo3_PAD.ipynb
 ```
 
 ---
 
 ## 📦 Librerías requeridas
-
-Incluyen, pero no se limitan a:
 
 - pandas
 - numpy
@@ -70,16 +62,17 @@ Incluyen, pero no se limitan a:
 - ipywidgets
 - pymongo
 
-> Todas están listadas en `requirements.txt`.
-
 ---
 
-## 🌐 Conexión a MongoDB
+## 🌐 Funcionalidad principal
 
-La interfaz interactiva permite:
-- Subir archivos CSV (`train.csv`, `test.csv`)
-- Cargar los datos en MongoDB Atlas (colecciones: `prestamo_train`, `prestamo_test`)
-- Realizar análisis exploratorio y visualización interactiva
+- Subida de archivos `.csv` o `.xlsx`
+- Visualización de los primeros registros
+- Migración de datos a MongoDB
+- Exploración de datos con widgets:
+  - Dimensiones, tipos, nulos, resumen
+  - Histogramas, boxplots, dispersión, outliers
+  - Filtros dinámicos por columna
 
 ---
 
